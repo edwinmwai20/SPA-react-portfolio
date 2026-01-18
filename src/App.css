@@ -1,0 +1,264 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+:root {
+  --primary: #007bff; /* Clean Blue */
+  --dark: #1a1a1a;
+  --light: #f4f4f4;
+  --border: #dddddd;
+  --white: #ffffff;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Standard clean font */
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: var(--dark);
+  line-height: 1.5;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  border-radius: 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.search-wrapper input {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  width: 250px;
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  padding: 60px 5%;
+  background-color: var(--light);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Form Section */
+.form-section {
+  padding: 40px 5%;
+}
+
+.styled-form {
+  border: 1px solid var(--border);
+  border-color: black;
+  
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto; /* Centers the form */
+}
+
+.styled-form h3 {
+  margin-top: 0;
+  color: black;
+}
+
+.styled-form input,
+.styled-form textarea {
+  width: 95%;
+  color: white;
+  background-color: white;
+  padding: 10px ;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  display: block; /* Ensures they stack */
+}
+
+.styled-form button {
+  background: var(--dark);
+  color:white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 16px;
+}
+
+/* Project Grid */
+.content-area {
+  padding: 40px 5%;
+  color: black;
+}
+/* --- Updated Row & Column Layout --- */
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--dark);
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+}
+
+/* We change the 'grid' into a vertical list of rows */
+.masonry-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* Large space between rows for a premium feel */
+  margin-bottom: 100px;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border: none; /* Removed the box border for a cleaner look */
+  overflow: visible;
+}
+
+/* This is the 'Unique' part: Every second project flips! */
+.project-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.image-container {
+  flex: 1; /* Takes up 50% of the row */
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: 400px; /* Taller images look more professional */
+  object-fit: cover;
+  border-radius: 4px;
+  filter: grayscale(20%); /* Subtle artistic touch */
+  transition: 0.3s;
+}
+
+.project-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+.project-info {
+  flex: 1; /* Takes up the other 50% */
+  padding: 0;
+}
+
+.project-info h3 {
+  font-size: 32px; /* Bigger titles */
+  margin: 0 0 15px 0;
+  letter-spacing: -1px;
+}
+
+.project-info p {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 25px;
+  max-width: 400px;
+}
+
+.view-link {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 4px;
+}
+
+/* Mobile: Stack them back into simple columns */
+@media (max-width: 768px) {
+  .project-card, 
+  .project-card:nth-child(even) {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .image-container img {
+    height: 300px;
+  }
+}
+
+.view-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Responsive (Mobile) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .hero h1 {
+    font-size: 28px;
+  }
+}
